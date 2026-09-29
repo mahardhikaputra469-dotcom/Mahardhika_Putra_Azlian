@@ -133,6 +133,7 @@ penjelasan unguided 3 : Program menerima sebuah angka, kemudian menggunakan peru
 Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley. 
+[2]Deitel, P., & Deitel, H. (2017). C++ How to Program (10th ed.). Pearson. 
+[3]GeeksforGeeks. (2024). C++ Programming Language. GeeksforGeeks – C++ Programming Language 
+[4]cppreference.com. C++ reference. cppreference – C++ Reference
