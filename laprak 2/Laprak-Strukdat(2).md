@@ -27,18 +27,17 @@ Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk str
 using namespace std;
 
 int main() {
-    float a, b;
+    int nilai[5];
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
-
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
-
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
+    nilai[0] = 80;
+    nilai[1] = 85;
+    nilai[2] = 90;
+    nilai[3] = 75;
+    nilai[4] = 95;
+    
+    for (int i = 0; i < 5; i++) {
+        cout << nilai[i] << endl;
+    }
 
     return 0;
 }
@@ -52,42 +51,15 @@ Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung pe
 using namespace std;
 
 int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
-
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
+    int nilai[3][5] = {
+        {80, 85, 90},
+        {75, 80, 85},
+        {90, 95, 100},
     };
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
-
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
-
+    cout << nilai[0][0] << endl;
+    cout << nilai[1][1] << endl;
+    cout << nilai[2][2] << " ";
     return 0;
 }
 ```
