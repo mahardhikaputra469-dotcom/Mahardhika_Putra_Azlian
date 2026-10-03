@@ -20,7 +20,7 @@ Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk str
 
 ## Guided 
 
-### 1. soal1
+### 1. soal1 ARRAY 1
 
 ```C++
 #include <iostream>
@@ -44,7 +44,7 @@ int main() {
 ```
 Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
 
-### 2. soal2
+### 2. soal2 ARRAY 2
 
 ```C++
 #include <iostream>
@@ -65,43 +65,190 @@ int main() {
 ```
 guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
 
-### 3. soal3
+### 3. soal3 ARRAY 3
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n;
-
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
-
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << "  ";
+    int data[2][3][3] = {
+        {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9} 
+        },
+        {
+            {10, 11, 12},
+            {13, 14, 15},
+            {16, 17, 18 }
         }
+    };
 
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
+    cout << data[0][1][1]  << " ";
+    return 0;
+}
+```
+guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
 
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
+### 4. soal4 ARRAY 4
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int data[2][2][2][2] = {
+        {
+            {
+                {1, 2},
+                {3, 4}
+            },
+            {
+                {5, 6},
+                {7, 8}
+            },
+        },
+        {
+            {
+                {9, 10},
+                {11, 12}
+            },
+            {
+                {13, 14},
+                {15, 16}
             }
         }
-        cout << endl;
+    };
+
+    cout << data[0][0][0][0]  << endl;
+    cout << data[1][1][1][1]  << endl;
+    
+    return 0;
+}
+```
+guided 4 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
+### 5. soal1 Pointer 1
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    char a;
+    int j;
+    char arr[6];
+
+    arr[3] = 'b';
+    a = 'u';
+    j = 10;
+
+    cout << a << endl;
+    cout << &a << endl;
+
+    cout << j << endl;
+    cout << &j << endl;
+
+    cout << arr[3] << endl;
+    cout << &(arr[4]) << endl;
+
+    return 0;
+}
+```
+guided 5 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
+### 6. soal2 Pointer 2
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, y;
+    int *px;
+
+    x = 87;
+    px = &x;
+    y = *px;
+
+    cout << "Alamat x= " << &x << endl;
+    cout << "Isi px= " << px << endl;
+    cout << "Nilai yang ditunjuk px= " << *px << endl;
+    cout << "Nilai y= " << y << endl;
+
+    return 0;
+}
+```
+guided 6 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
+### 7. soal3 Pointer 3
+
+```C++
+#include <iostream>
+#define MAX 5
+using namespace std;
+
+int main() {
+    int i, j;
+    float nilai_total, rata_rata;
+    float nilai[MAX];
+
+    static int nilai_tahun[MAX][MAX] = {
+        {0, 2, 2, 0, 0},
+        {0, 1, 1, 1, 0},
+        {0, 3, 3, 3, 0},
+        {4, 4, 0, 0, 4},
+        {5, 0, 0, 0, 5}
+    };
+
+    for (i = 0; i < MAX; i++) {
+        cout << "masukan nilai ke-" << i + 1 << endl;
+        cin >> nilai[i];
+    }
+
+    cout << "\ndata nilai siswa :\n";
+
+    for (i = 0; i < MAX; i++)
+        cout << "nilai k-" << i + 1 << "=" << nilai[i] << endl;
+    cout << "\n nilai tahunan : \n";
+
+    for (i = 0; i < MAX; i++) {
+        for (j = 0; j < MAX; j++)
+            cout << nilai_tahun[i][j];
+        cout << "\n";
     }
 
     return 0;
 }
 ```
-guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 7 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
+### 8. soal4 Pointer 4
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int data[2][3][3] = {
+        {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9} 
+        },
+        {
+            {10, 11, 12},
+            {13, 14, 15},
+            {16, 17, 18 }
+        }
+    };
+
+    cout << data[0][1][1]  << " ";
+    return 0;
+}
+```
+guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
 
 ## Unguided 
 
@@ -112,19 +259,11 @@ guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulan
 using namespace std;
 
 int main() {
-    float a, b;
+    char nama[] = "strukdat";
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
-
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
-
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
-
+    cout << nama << endl;
+    cout << nama[3] << endl;
+    
     return 0;
 }
 ```
