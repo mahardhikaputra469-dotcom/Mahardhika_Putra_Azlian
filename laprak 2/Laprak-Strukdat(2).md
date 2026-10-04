@@ -42,7 +42,7 @@ int main() {
     return 0;
 }
 ```
-Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
+Guided 1 Menjelaskan programnya adalah menyimpan 5 nilai menggunakan array, kemudian menampilkan seluruh nilai tersebut dengan perulangan for.
 
 ### 2. soal2 ARRAY 2
 
@@ -63,7 +63,7 @@ int main() {
     return 0;
 }
 ```
-guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
+guided 2 Menjelaskan programnya adalah mengambil dan menampilkan data tertentu dari array 2 dimensi berdasarkan posisi baris dan kolom.
 
 ### 3. soal3 ARRAY 3
 
@@ -89,7 +89,7 @@ int main() {
     return 0;
 }
 ```
-guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 3 menjelaskanprogramnya adalah mengambil data tertentu dari array 3 dimensi berdasarkan posisi blok, baris, dan kolom.
 
 ### 4. soal4 ARRAY 4
 
