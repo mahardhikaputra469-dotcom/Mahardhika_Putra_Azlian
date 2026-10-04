@@ -453,6 +453,6 @@ penjelasan unguided 3 mengolah data dalam sebuah array. Program dapat menampilka
 Dari beberapa program tersebut, dapat dipahami dasar-dasar C++ seperti array multidimensi, fungsi, pointer, reference, alamat memori, perulangan, dan operasi matriks. Konsep-konsep ini digunakan untuk menyimpan, mengakses, dan mengolah data dengan lebih terstruktur.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] Deitel, P., & Deitel, H. M. (2023). C++ How to Program: An Objects-Natural Approach (11th ed.). Pearson. Buku ini membahas fungsi, array, array multidimensi, pointer, reference, dan pemrograman C++ dasar.
+<br>[2] cppreference. Array declaration. Membahas penggunaan array dan array multidimensi dalam C++.
+<br>[3] cppreference. Pointer declaration. Membahas pointer, operator &, operator *, dan penggunaan pointer pada fungsi.
