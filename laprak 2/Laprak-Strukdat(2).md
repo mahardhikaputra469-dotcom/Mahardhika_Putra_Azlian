@@ -125,7 +125,7 @@ int main() {
     return 0;
 }
 ```
-guided 4 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 4 menjelaskan Program kode tersebut digunakan untuk memahami cara membuat dan mengakses array 4 dimensi, dengan setiap nilai diakses menggunakan empat indeks.
 
 ### 5. soal1 Pointer 1
 
@@ -154,7 +154,7 @@ int main() {
     return 0;
 }
 ```
-guided 5 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 5 menjelaskan Program kode ini menunjukkan bahwa setiap variabel dan elemen array memiliki nilai dan alamat memori. Nilai ditampilkan langsung menggunakan nama variabel, sedangkan alamatnya diperoleh menggunakan tanda &.
 
 ### 6. soal2 Pointer 2
 
@@ -178,7 +178,7 @@ int main() {
     return 0;
 }
 ```
-guided 6 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 6 menjelaskan Program pointer digunakan untuk menyimpan alamat memori suatu variabel dan mengakses nilai variabel tersebut melalui alamatnya. Jadi pada program ini, px menunjuk ke x, sehingga *px bernilai 87. 
 
 ### 7. soal3 Pointer 3
 
@@ -220,7 +220,7 @@ int main() {
     return 0;
 }
 ```
-guided 7 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 7 menjelaskan Kesimpulannya, program ini memperkenalkan penggunaan array 1 dimensi, array 2 dimensi, input cin, output cout, serta perulangan for untuk mengelola data nilai.
 
 ### 8. soal4 Pointer 4
 
@@ -246,7 +246,7 @@ int main() {
     return 0;
 }
 ```
-guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 8 menjelaskan Program ini digunakan untuk memahami array 3 dimensi, yaitu cara menyimpan data dalam beberapa tingkat dan mengaksesnya menggunakan tiga indeks berupa blok, baris, dan kolom. Pada program tersebut, data[0][1][1] digunakan untuk mengambil nilai 5 dari array.
 
 ### 9. Procedure
 
@@ -268,7 +268,7 @@ void tulis(int x){
         cout << "baris ke-" << i+1 << endl;
 }
 ```
-guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 8 menjelaskan Kesimpulannya, program ini digunakan untuk memahami fungsi (function) dalam C++. Program meminta pengguna memasukkan jumlah baris, kemudian nilai tersebut dikirim ke fungsi tulis() untuk menampilkan nomor baris dari 1 sampai jumlah yang dimasukkan. Fungsi for digunakan untuk melakukan perulangan sesuai jumlah baris tersebut.
 
 ### 10. Parameter
 ```C++
@@ -304,7 +304,7 @@ int main() {
     cout << "Setelah Call by Reference  -> a = " << a << ", b = " << b << " (Berubah lagi!)" << endl;
 }
 ```
-guided 10 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+guided 10 menjelaskan Kesimpulannya, program ini digunakan untuk memahami perbedaan Call by Value, Call by Pointer, dan Call by Reference dalam C++. Call by Value hanya menukar salinan nilai sehingga nilai a dan b tetap. Call by Pointer menggunakan alamat memori sehingga nilai asli a dan b dapat ditukar. Sedangkan Call by Reference menggunakan referensi langsung ke variabel asli sehingga nilainya juga dapat berubah. Jadi, pointer dan reference dapat mengubah nilai variabel asli, sedangkan value tidak.
 
 ## Unguided 
 
