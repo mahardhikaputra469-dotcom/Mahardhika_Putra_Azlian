@@ -4,17 +4,6 @@
 ## Dasar Teori
 Array merupakan salah satu struktur data dasar dalam pemrograman yang digunakan untuk menyimpan beberapa data dengan tipe data yang sama dalam satu variabel. Setiap data di dalam array memiliki posisi atau indeks yang dimulai dari angka 0. Menurut cppreference, array merupakan kumpulan elemen dengan tipe data yang sama dan disimpan secara berurutan di dalam memori.
 
-### A. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
-
-### B. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
 
 ## Guided 
 
@@ -461,7 +450,7 @@ int main() {
 penjelasan unguided 3 mengolah data dalam sebuah array. Program dapat menampilkan isi array, mencari nilai paling kecil menggunakan fungsi minimum, mencari nilai paling besar menggunakan fungsi maksimum, serta menghitung nilai rata-rata. switch-case digunakan untuk memilih menu, sedangkan do-while membuat menu terus berjalan sampai pengguna memilih keluar.
 
 ## Kesimpulan
-Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
+Dari beberapa program tersebut, dapat dipahami dasar-dasar C++ seperti array multidimensi, fungsi, pointer, reference, alamat memori, perulangan, dan operasi matriks. Konsep-konsep ini digunakan untuk menyimpan, mengakses, dan mengolah data dengan lebih terstruktur.
 
 ## Referensi
 [1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
