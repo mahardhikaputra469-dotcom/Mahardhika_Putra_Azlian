@@ -259,21 +259,46 @@ guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulan
 using namespace std;
 
 int main() {
-    char nama[] = "strukdat";
+    int A[3][3], B[3][3];
 
-    cout << nama << endl;
-    cout << nama[3] << endl;
-    
-    return 0;
+    cout << "Masukkan Matriks A:\n";
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++) cin >> A[i][j];
+
+    cout << "Masukkan Matriks B:\n";
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++) cin >> B[i][j];
+
+    cout << "\nPenjumlahan:\n";
+    for(int i=0;i<3;i++) {
+        for(int j=0;j<3;j++)
+            cout << A[i][j]+B[i][j] << "\t";
+        cout << endl;
+    }
+
+    cout << "\nPengurangan:\n";
+    for(int i=0;i<3;i++) {
+        for(int j=0;j<3;j++)
+            cout << A[i][j]-B[i][j] << "\t";
+        cout << endl;
+    }
+
+    cout << "\nPerkalian:\n";
+    for(int i=0;i<3;i++) {
+        for(int j=0;j<3;j++) {
+            int hasil=0;
+            for(int k=0;k<3;k++)
+                hasil += A[i][k]*B[k][j];
+            cout << hasil << "\t";
+        }
+        cout << endl;
+    }
 }
 ```
 ### Output Unguided 1 :
 
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal1.png)
-
-##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
 penjelasan unguided 1 
 
@@ -283,53 +308,33 @@ penjelasan unguided 1
 #include <iostream>
 using namespace std;
 
+void pointer(int *a,int *b,int *c) {
+    int t=*a; *a=*b; *b=*c; *c=t;
+}
+
+void reference(int &a,int &b,int &c) {
+    int t=a; a=b; b=c; c=t;
+}
+
 int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+    int a,b,c;
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+    cout << "Masukkan A B C: ";
+    cin >> a >> b >> c;
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
+    cout << "Awal: " << a << " " << b << " " << c << endl;
 
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
+    pointer(&a,&b,&c);
+    cout << "Pointer: " << a << " " << b << " " << c << endl;
 
-    return 0;
+    reference(a,b,c);
+    cout << "Reference: " << a << " " << b << " " << c << endl;
 }
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
-
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
 penjelasan unguided 2
 
@@ -339,43 +344,63 @@ penjelasan unguided 2
 #include <iostream>
 using namespace std;
 
+int cariMinimum(int a[],int n) {
+    int m=a[0];
+    for(int i=1;i<n;i++)
+        if(a[i]<m) m=a[i];
+    return m;
+}
+
+int cariMaksimum(int a[],int n) {
+    int m=a[0];
+    for(int i=1;i<n;i++)
+        if(a[i]>m) m=a[i];
+    return m;
+}
+
+void hitungRataRata(int a[],int n) {
+    int t=0;
+    for(int i=0;i<n;i++) t+=a[i];
+    cout << "Rata-rata = " << (double)t/n << endl;
+}
+
 int main() {
-    int n;
+    int a[]={11,8,5,7,12,26,3,54,33,55};
+    int p;
 
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
+    do {
+        cout << "\n1. Tampilkan array\n";
+        cout << "2. Maksimum\n";
+        cout << "3. Minimum\n";
+        cout << "4. Rata-rata\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih: ";
+        cin >> p;
 
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << "  ";
+        switch(p) {
+            case 1:
+                for(int i=0;i<10;i++) cout << a[i] << " ";
+                cout << endl;
+                break;
+            case 2:
+                cout << "Maksimum = " << cariMaksimum(a,10) << endl;
+                break;
+            case 3:
+                cout << "Minimum = " << cariMinimum(a,10) << endl;
+                break;
+            case 4:
+                hitungRataRata(a,10);
+                break;
+            case 5:
+                cout << "Program selesai.\n";
         }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
-
-    return 0;
+    } while(p!=5);
 }
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
 ![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
-
-##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
 penjelasan unguided 3
 
