@@ -300,7 +300,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%202/soal%20unguided%201.png)
 
-penjelasan unguided 1 
+penjelasan unguided 1 mengolah dua matriks berukuran 3×3. Program menerima nilai dari matriks A dan B, kemudian melakukan operasi penjumlahan, pengurangan, dan perkalian. Perulangan for digunakan untuk mengakses setiap baris dan kolom matriks.
 
 ### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
 
@@ -336,7 +336,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%202/soal%20unguided%202.png)
 
-penjelasan unguided 2
+penjelasan unguided 2 menukar nilai dari tiga variabel. Program menerapkan dua cara, yaitu menggunakan pointer dan reference. Pointer menggunakan alamat memori variabel, sedangkan reference langsung mengacu pada variabel aslinya. Variabel sementara digunakan untuk membantu proses pertukaran nilai.
 
 ### 3. meminta kita membuat program yang menerima input berupa sebuah angka, kemudian menghasilkan pola output berbentuk mirror.
 
@@ -402,7 +402,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%202/soal%20unguided%203.png)
 
-penjelasan unguided 3
+penjelasan unguided 3 mengolah data dalam sebuah array. Program dapat menampilkan isi array, mencari nilai paling kecil menggunakan fungsi minimum, mencari nilai paling besar menggunakan fungsi maksimum, serta menghitung nilai rata-rata. switch-case digunakan untuk memilih menu, sedangkan do-while membuat menu terus berjalan sampai pengguna memilih keluar.
 
 ## Kesimpulan
 Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
