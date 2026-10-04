@@ -2,9 +2,7 @@
 <p align="center">Mahardhika Putra Azlian - 109082500025</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
+Array merupakan salah satu struktur data dasar dalam pemrograman yang digunakan untuk menyimpan beberapa data dengan tipe data yang sama dalam satu variabel. Setiap data di dalam array memiliki posisi atau indeks yang dimulai dari angka 0. Menurut cppreference, array merupakan kumpulan elemen dengan tipe data yang sama dan disimpan secara berurutan di dalam memori.
 
 ### A. ...<br/>
 ...
