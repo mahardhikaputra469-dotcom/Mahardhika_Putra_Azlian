@@ -250,6 +250,64 @@ int main() {
 ```
 guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
 
+### 9. Procedure
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tulis(int x);
+int main() {
+    int jum;
+    cout << "jumlah baris kata = ";
+    cin >> jum;
+    tulis(jum);
+    return 0;
+}
+
+void tulis(int x){
+    for (int i=0; i<x; i++)
+        cout << "baris ke-" << i+1 << endl;
+}
+```
+guided 8 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
+### 10. Parameter
+```C++
+#include <iostream>
+using namespace std;
+
+void tukarValue(int x, int y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+void tukarPointer(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void tukarReference(int &x, int &y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+int main() {
+    int a = 4, b= 6;
+    tukarValue(a, b);
+    cout << "Setelah Call by Value   -> a = " << a << ", b = " << b << " (Tetap)" << endl;
+
+    tukarPointer(&a, &b);
+    cout << "Setelah Call by Pointer  -> a = " << a << ", b = " << b << " (Berubah!)" << endl;
+
+    tukarReference(a, b);
+    cout << "Setelah Call by Reference  -> a = " << a << ", b = " << b << " (Berubah lagi!)" << endl;
+}
+```
+guided 10 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+
 ## Unguided 
 
 ### 1. membuat program yang menerima input dua buah bilangan bertipe float.
