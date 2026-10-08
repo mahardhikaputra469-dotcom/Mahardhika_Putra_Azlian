@@ -2,9 +2,7 @@
 <p align="center">Mahardhika Putra Azlian - 109082500025</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
+Dari praktikum ini dapat dipahami beberapa konsep dasar struktur data dalam C++, yaitu struct, array, ADT, fungsi, dan pointer. Struct digunakan untuk menggabungkan beberapa data, array digunakan untuk menyimpan banyak data, ADT digunakan untuk membuat struktur program yang lebih terorganisir, fungsi digunakan untuk membagi tugas dalam program, sedangkan pointer digunakan untuk mengakses dan mengubah data melalui alamat memorinya.
 
 ### A. ...<br/>
 ...
