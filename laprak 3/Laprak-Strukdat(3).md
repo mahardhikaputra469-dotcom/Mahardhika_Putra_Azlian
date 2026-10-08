@@ -20,110 +20,58 @@ Dari praktikum ini dapat dipahami beberapa konsep dasar struktur data dalam C++,
 
 ### 1. soal1
 
-```C++
+```C++ mahasiswa.cpp
 #include <iostream>
+#include "mahasiswa.h"
+
 using namespace std;
 
-int main() {
-    float a, b;
+void inputMhs(mahasiswa &m) {
+    cout << "input nama = ";
+    cin >> (m).nim;
+    cout << "input nilai = ";
+    cin >> (m).nilai1;
+    cout << "input nilai2 = ";
+    cin >> (m).nilai2;
+}
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
-
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
-
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
-
-    return 0;
+float rata2(mahasiswa m){
+    return float(m.nilai1+m.nilai2)/2;
 }
 ```
 Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
 
-### 2. soal2
+### 2. mahasiswa.h
 
 ```C++
-#include <iostream>
-using namespace std;
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
 
-int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+struct mahasiswa{
+    char nim[10];
+    int nilai1, nilai2;
+};
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+void inputMhs (mahasiswa &m) ;
+float rata2 (mahasiswa m) ;
+#endif
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
-
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
-
-    return 0;
-}
 ```
 guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
 
-### 3. soal3
+### 3. soal3 
 
-```C++
+```C++ main.cpp
 #include <iostream>
+#include "mahasiswa.h"
+
 using namespace std;
 
-int main() {
-    int n;
-
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
-
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << "  ";
-        }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
-
+int main()
+{
+    mahasiswa mhs;
+    inputMhs (mhs) ;
+    cout << "rata-rata = " << rata2 (mhs) ;
     return 0;
 }
 ```
