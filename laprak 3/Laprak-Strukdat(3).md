@@ -292,5 +292,5 @@ penjelasan unguided 3 ini meminta kita membuat dua array integer berukuran 3×3,
 Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa struktur data dalam C++ dapat digunakan untuk menyimpan dan mengolah data dengan lebih teratur. Penggunaan struct dan array membantu menyimpan data mahasiswa beserta nilai akhirnya. ADT (Abstract Data Type) membantu memisahkan deklarasi, implementasi, dan program utama agar kode lebih rapi dan mudah dipahami. Sementara itu, array 2 dimensi dan pointer digunakan untuk menyimpan data dalam bentuk tabel serta menukar nilai pada posisi tertentu. Melalui praktikum ini, saya dapat memahami cara kerja struct, array, fungsi, ADT, dan pointer serta penerapannya dalam pembuatan program C++.
 
 ## Referensi
-[1] cppreference.com. (n.d.). Array declaration (C++). https://en.cppreference.com/w/cpp/language/array [2]cppreference.com. (n.d.). Pointer declaration (C++). 
+[1] cppreference.com. (n.d.). Array declaration (C++). https://en.cppreference.com/w/cpp/language/array<br> [2]cppreference.com. (n.d.). Pointer declaration (C++). 
 https://en.cppreference.com/w/cpp/language/pointer<br> [3]cppreference.com. (n.d.). Struct declaration. https://cppreference.com/c/language/struct<br> [4]Liang, Y. D. (2022). Introduction to C++ Programming and Data Structures (5th ed.). Pearson. Informasi buku dari Pearson<br>...
