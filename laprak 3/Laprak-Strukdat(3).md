@@ -34,8 +34,6 @@ float rata2 (mahasiswa m) ;
 #endif
 
 ```
-Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
-
 ### 2. mahasiswa.cpp
 
 ```C++
@@ -57,8 +55,6 @@ float rata2(mahasiswa m){
     return float(m.nilai1+m.nilai2)/2;
 }
 ```
-guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
-
 ### 3. main.cpp
 
 ```C++ 
@@ -157,49 +153,23 @@ penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal
 
 ### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
 
-```C++
-#include <iostream>
+```C++ pelajaran.h
+#ifndef PELAJARAN_H
+#define PELAJARAN_H
+
+#include <string>
 using namespace std;
 
-int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+pelajaran create_pelajaran(string namapel, string kodepel);
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
+void tampil_pelajaran(pelajaran pel);
 
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
-
-    return 0;
-}
+#endif
 ```
 ### Output Unguided 2 :
 
