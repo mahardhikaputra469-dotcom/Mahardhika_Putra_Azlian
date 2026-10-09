@@ -60,7 +60,7 @@ int main()
     return 0;
 }
 ```
-guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
+Program C++ ini digunakan untuk memasukkan data mahasiswa berupa NIM dan dua nilai, kemudian menghitung nilai rata-ratanya. Program dibagi menjadi tiga file, yaitu mahasiswa.h, mahasiswa.cpp, dan main.cpp. File mahasiswa.h berisi deklarasi struktur mahasiswa yang menyimpan NIM dan dua nilai, serta deklarasi fungsi inputMhs() dan rata2(). File mahasiswa.cpp berisi implementasi kedua fungsi tersebut. Fungsi inputMhs() digunakan untuk menerima input NIM dan nilai mahasiswa, sedangkan fungsi rata2() digunakan untuk menjumlahkan kedua nilai lalu membaginya dengan dua. Sementara itu, file main.cpp berfungsi sebagai program utama yang membuat variabel mahasiswa, memanggil fungsi input, dan menampilkan hasil rata-rata menggunakan cout. Dengan memisahkan kode ke beberapa file, program menjadi lebih rapi, terstruktur, dan mudah dikembangkan.
 
 ## Unguided 
 
@@ -138,9 +138,9 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%203/pp.png)
 
-penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal 10 mahasiswa, serta fungsi untuk menghitung nilai akhir berdasarkan nilai UTS, UAS, dan tugas.
+penjelasan unguided 1 ini meminta kita membuat program untuk menyimpan data maksimal 10 mahasiswa menggunakan array. Setiap mahasiswa memiliki data nama, NIM, nilai UTS, UAS, tugas, dan nilai akhir.
 
-### 2. 
+### 2. membuat Abstrak data type (ADT) dalam menentukan sebuah nama pelajaran dan kode pelajaran
 
 pelajaran.h
 ```C++ 
@@ -210,25 +210,87 @@ int main() {
 
 penjelasan unguided 2 ini meminta kita membuat ADT (Abstract Data Type) bernama pelajaran yang memiliki dua data, yaitu namaMapel dan kodeMapel. Selain itu, kita diminta membuat fungsi untuk membentuk data pelajaran dan prosedur untuk menampilkannya. Inti dari program ini adalah memahami cara membuat ADT dan memisahkan program menjadi beberapa file agar lebih terstruktur.
 
-### 3. 
+### 3. membuat sebuah program array yang berukuran 3x3 dan 2 buah pointer integer
 
 ```C++
+#include <iostream>
+using namespace std;
 
+void tampilkanArray(int arr[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+void tukarArray(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
+    int temp = arr1[baris][kolom];
+    arr1[baris][kolom] = arr2[baris][kolom];
+    arr2[baris][kolom] = temp;
+}
+
+void tukarPointer(int *p1, int *p2) {
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+int main() {
+    int array1[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int array2[3][3] = {
+        {10, 11, 12},
+        {13, 14, 15},
+        {16, 17, 18}
+    };
+
+    cout << "Array 1 sebelum ditukar:" << endl;
+    tampilkanArray(array1);
+
+    cout << "\nArray 2 sebelum ditukar:" << endl;
+    tampilkanArray(array2);
+    tukarArray(array1, array2, 1, 1);
+
+    cout << "\nArray 1 setelah pertukaran:" << endl;
+    tampilkanArray(array1);
+
+    cout << "\nArray 2 setelah pertukaran:" << endl;
+    tampilkanArray(array2);
+
+    int a = 100;
+    int b = 200;
+    int *p1 = &a;
+    int *p2 = &b;
+
+    cout << "\nSebelum tukar pointer:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    tukarPointer(p1, p2);
+
+    cout << "\nSetelah tukar pointer:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
+}
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
+![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%203/unguided%203.png)
 
-##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 3
+penjelasan unguided 3 ini meminta kita membuat dua array integer berukuran 3×3, dua pointer integer, fungsi untuk menampilkan isi array, fungsi untuk menukar elemen dari dua array pada posisi tertentu, dan fungsi untuk menukar nilai variabel yang ditunjuk oleh dua pointer.
 
 ## Kesimpulan
-Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa struktur data dalam C++ dapat digunakan untuk menyimpan dan mengolah data dengan lebih teratur. Penggunaan struct dan array membantu menyimpan data mahasiswa beserta nilai akhirnya. ADT (Abstract Data Type) membantu memisahkan deklarasi, implementasi, dan program utama agar kode lebih rapi dan mudah dipahami. Sementara itu, array 2 dimensi dan pointer digunakan untuk menyimpan data dalam bentuk tabel serta menukar nilai pada posisi tertentu. Melalui praktikum ini, saya dapat memahami cara kerja struct, array, fungsi, ADT, dan pointer serta penerapannya dalam pembuatan program C++.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] cppreference.com. (n.d.). Array declaration (C++). https://en.cppreference.com/w/cpp/language/array [2]cppreference.com. (n.d.). Pointer declaration (C++). 
+https://en.cppreference.com/w/cpp/language/pointer<br> [3]cppreference.com. (n.d.). Struct declaration. https://cppreference.com/c/language/struct<br> [4]Liang, Y. D. (2022). Introduction to C++ Programming and Data Structures (5th ed.). Pearson. Informasi buku dari Pearson<br>...
