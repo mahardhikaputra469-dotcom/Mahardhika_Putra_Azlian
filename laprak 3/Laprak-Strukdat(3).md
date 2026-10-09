@@ -135,7 +135,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal1.png)
+![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%203/pp.png)
 
 penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal 10 mahasiswa, serta fungsi untuk menghitung nilai akhir berdasarkan nilai UTS, UAS, dan tugas.
 
@@ -204,7 +204,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
+![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%203/tugas%202%20unguided/unguided%202.png)
 
 
 penjelasan unguided 2 ini meminta kita membuat ADT (Abstract Data Type) bernama pelajaran yang memiliki dua data, yaitu namaMapel dan kodeMapel. Selain itu, kita diminta membuat fungsi untuk membentuk data pelajaran dan prosedur untuk menampilkannya. Inti dari program ini adalah memahami cara membuat ADT dan memisahkan program menjadi beberapa file agar lebih terstruktur.
