@@ -18,9 +18,27 @@ Dari praktikum ini dapat dipahami beberapa konsep dasar struktur data dalam C++,
 
 ## Guided 
 
-### 1. soal1
+### 1. mahasiswa.h
 
-```C++ mahasiswa.cpp
+```C++ 
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
+
+struct mahasiswa{
+    char nim[10];
+    int nilai1, nilai2;
+};
+
+void inputMhs (mahasiswa &m) ;
+float rata2 (mahasiswa m) ;
+#endif
+
+```
+Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
+
+### 2. mahasiswa.cpp
+
+```C++
 #include <iostream>
 #include "mahasiswa.h"
 
@@ -39,29 +57,11 @@ float rata2(mahasiswa m){
     return float(m.nilai1+m.nilai2)/2;
 }
 ```
-Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
-
-### 2. mahasiswa.h
-
-```C++
-#ifndef MAHASISWA_H_INCLUDED
-#define MAHASISWA_H_INCLUDED
-
-struct mahasiswa{
-    char nim[10];
-    int nilai1, nilai2;
-};
-
-void inputMhs (mahasiswa &m) ;
-float rata2 (mahasiswa m) ;
-#endif
-
-```
 guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
 
-### 3. soal3 
+### 3. main.cpp
 
-```C++ main.cpp
+```C++ 
 #include <iostream>
 #include "mahasiswa.h"
 
@@ -83,21 +83,67 @@ guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulan
 
 ```C++
 #include <iostream>
+#include <string>
 using namespace std;
 
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts;
+    float uas;
+    float tugas;
+    float nilaiAkhir;
+};
+
+float hitungNilaiAkhir(float uts, float uas, float tugas) {
+    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+}
+
 int main() {
-    float a, b;
+    Mahasiswa mhs[10];
+    int jumlah;
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
+    cout << "Jumlah mahasiswa (maks. 10): ";
+    cin >> jumlah;
+    cin.ignore();
 
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
+    if (jumlah > 10)
+        jumlah = 10;
 
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nData mahasiswa ke-" << i + 1 << endl;
+
+        cout << "Nama  : ";
+        getline(cin, mhs[i].nama);
+
+        cout << "NIM   : ";
+        getline(cin, mhs[i].nim);
+
+        cout << "UTS   : ";
+        cin >> mhs[i].uts;
+
+        cout << "UAS   : ";
+        cin >> mhs[i].uas;
+
+        cout << "Tugas : ";
+        cin >> mhs[i].tugas;
+        cin.ignore();
+
+        mhs[i].nilaiAkhir =
+            hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
+    }
+
+    cout << "\n===== DATA MAHASISWA =====" << endl;
+
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Nama        : " << mhs[i].nama << endl;
+        cout << "NIM         : " << mhs[i].nim << endl;
+        cout << "UTS         : " << mhs[i].uts << endl;
+        cout << "UAS         : " << mhs[i].uas << endl;
+        cout << "Tugas       : " << mhs[i].tugas << endl;
+        cout << "Nilai Akhir : " << mhs[i].nilaiAkhir << endl;
+    }
 
     return 0;
 }
@@ -107,10 +153,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal1.png)
 
-##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 1 
+penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal 10 mahasiswa, serta fungsi untuk menghitung nilai akhir berdasarkan nilai UTS, UAS, dan tugas.
 
 ### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
 
