@@ -6,7 +6,8 @@ Dari praktikum ini dapat dipahami beberapa konsep dasar struktur data dalam C++,
 
 ## Guided 
 
-### 1. mahasiswa.h
+### 1. ABSTRACT DATA TYPE (ADT)
+mahasiswa.h
 
 ```C++ 
 #ifndef MAHASISWA_H_INCLUDED
@@ -22,7 +23,7 @@ float rata2 (mahasiswa m) ;
 #endif
 
 ```
-### 2. mahasiswa.cpp
+mahasiswa.cpp
 
 ```C++
 #include <iostream>
@@ -43,7 +44,7 @@ float rata2(mahasiswa m){
     return float(m.nilai1+m.nilai2)/2;
 }
 ```
-### 3. main.cpp
+main.cpp
 
 ```C++ 
 #include <iostream>
@@ -63,7 +64,7 @@ guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulan
 
 ## Unguided 
 
-### 1. membuat program yang menerima input dua buah bilangan bertipe float.
+### 1. membuat progran yang dapat menyimpan data mahasiswa kedalam sebuah array
 
 ```C++
 #include <iostream>
@@ -139,7 +140,7 @@ int main() {
 
 penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal 10 mahasiswa, serta fungsi untuk menghitung nilai akhir berdasarkan nilai UTS, UAS, dan tugas.
 
-### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
+### 2. 
 
 pelajaran.h
 ```C++ 
@@ -209,7 +210,7 @@ int main() {
 
 penjelasan unguided 2 ini meminta kita membuat ADT (Abstract Data Type) bernama pelajaran yang memiliki dua data, yaitu namaMapel dan kodeMapel. Selain itu, kita diminta membuat fungsi untuk membentuk data pelajaran dan prosedur untuk menampilkannya. Inti dari program ini adalah memahami cara membuat ADT dan memisahkan program menjadi beberapa file agar lebih terstruktur.
 
-### 3. meminta kita membuat program yang menerima input berupa sebuah angka, kemudian menghasilkan pola output berbentuk mirror.
+### 3. 
 
 ```C++
 
