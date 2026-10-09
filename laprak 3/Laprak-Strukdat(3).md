@@ -153,7 +153,8 @@ penjelasan unguided 1 Menggunakan struct dan array untuk menyimpan data maksimal
 
 ### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
 
-```C++ pelajaran.h
+pelajaran.h
+```C++ 
 #ifndef PELAJARAN_H
 #define PELAJARAN_H
 
@@ -171,51 +172,59 @@ void tampil_pelajaran(pelajaran pel);
 
 #endif
 ```
+
+pelajaran.cpp
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran pel;
+
+    pel.namaMapel = namapel;
+    pel.kodeMapel = kodepel;
+
+    return pel;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai : " << pel.kodeMapel << endl;
+}
+```
+
+main.cpp
+```C++
+#include <iostream>
+#include "pelajaran.h"
+
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+
+    tampil_pelajaran(pel);
+
+    return 0;
+}
+```
+
 ### Output Unguided 2 :
 
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
 
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
-penjelasan unguided 2
+penjelasan unguided 2 ini meminta kita membuat ADT (Abstract Data Type) bernama pelajaran yang memiliki dua data, yaitu namaMapel dan kodeMapel. Selain itu, kita diminta membuat fungsi untuk membentuk data pelajaran dan prosedur untuk menampilkannya. Inti dari program ini adalah memahami cara membuat ADT dan memisahkan program menjadi beberapa file agar lebih terstruktur.
 
 ### 3. meminta kita membuat program yang menerima input berupa sebuah angka, kemudian menghasilkan pola output berbentuk mirror.
 
 ```C++
-#include <iostream>
-using namespace std;
 
-int main() {
-    int n;
-
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
-
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << "  ";
-        }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
-
-    return 0;
-}
 ```
 ### Output Unguided 3 :
 
