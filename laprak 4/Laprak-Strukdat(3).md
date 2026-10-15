@@ -2,129 +2,294 @@
 <p align="center">Mahardhika Putra Azlian - 109082500025</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
-
-### A. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
-
-### B. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+Linked List adalah struktur data yang terdiri dari beberapa node yang saling terhubung melalui pointer. Setiap node menyimpan data dan alamat node berikutnya. Operasi Linked List meliputi penambahan, penghapusan, pencarian, dan penelusuran data. Linked List memiliki keunggulan dalam penyisipan dan penghapusan data, terutama ketika posisi data sudah diketahui. Namun, struktur ini membutuhkan memori tambahan untuk pointer dan memiliki akses data yang lebih lambat dibandingkan array [1]. Dengan demikian, Linked List cocok digunakan untuk mengelola data yang jumlahnya dapat berubah secara dinamis.
 
 ## Guided 
 
-### 1. soal1
+### 1. list.h
 
 ```C++
+//hear guard digunakan untuk mencegah file header yg sama
+//di-include lebih dari sekali dalam satu program
+
+#ifndef LIST_H
+#define LIST_H
+#define Nil NULL
+
 #include <iostream>
 using namespace std;
 
-int main() {
-    float a, b;
+//deklarasi isi data struct mahasiswa
+struct mahasiswa {
+    string nama;
+    string nim;
+    int umur;
+};
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
+typedef mahasiswa dataMahasiswa; //memberikan nama alias dataMahasiswa untuk struct mahasiswa
 
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
+typedef struct node *address; //mendefinisikan alias address
 
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
+struct node { //node untuk isi dari linked listnya, isi setiap node adalah data & pointer next
+    dataMahasiswa isidata;
+    address next;
+};
 
-    return 0;
-}
+struct linkedList { //ini linked listnya
+    address first;
+};
+
+//semua function & prosedur yang akan dipakai
+bool isEmpty(linkedList list);
+void createList(linkedList &list);
+address alokasi(string nama, string nim, int umur);
+void dealokasi(address &node);
+void printList(linkedList list);
+void insertFirst(linkedList &list, address nodeBaru);
+void insertAfter(linkedList &list, address nodeBaru, address prev);
+void insertLast(linkedList &list, address nodeBaru);
+
+void delFirst(linkedList &list);
+void delLast(linkedList &list);
+void delAfter(linkedList &list, address nodeHapus, address nodePrev);
+int nbList(linkedList list);
+void deleteList(linkedList &list);
+
+#endif
 ```
 Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
 
-### 2. soal2
+### 2. list.cpp
 
 ```C++
+
+#include "list.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+// I.S = Initial State / kondisi awal
+// F.S = Final State / kondisi akhir
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+// Fungsi untuk cek apakah list kosong atau tidak
+bool isEmpty(linkedList List) {
+    if (List.first == Nil) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
+// Pembuatan linked list kosong
+void createList(linkedList &List) {
+    /* I.S. sembarang
+       F.S. terbentuk list kosong */
+    List.first = Nil;
+}
 
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
+// Pembuatan node baru dengan menerapkan manajemen memori
+address alokasi(string nama, string nim, int umur) {
+    /* I.S. sembarang
+       F.S. mengembalikan alamat node baru dengan isi data sesuai parameter dan next = Nil */
+    address nodeBaru = new node;
+    nodeBaru->isidata.nama = nama;
+    nodeBaru->isidata.nim = nim;
+    nodeBaru->isidata.umur = umur;
+    nodeBaru->next = Nil;
+    return nodeBaru;
+}
+
+// Penghapusan node dengan menerapkan manajemen memori
+void dealokasi(address &node) {
+    /* I.S. P terdefinisi
+       F.S. memori yang digunakan node dikembalikan ke sistem */
+    node->next = Nil;
+    delete node;
+}
+
+// Prosedur untuk insert / menambahkan node baru ke dalam list
+void insertFirst(linkedList &List, address nodeBaru) {
+    /* I.S. sembarang, P sudah dialokasikan
+       F.S. menempatkan elemen list (node) pada awal list */
+    nodeBaru->next = List.first;
+    List.first = nodeBaru;
+}
+
+void insertAfter(linkedList &List, address nodeBaru, address Prev) {
+    /* I.S. sembarang, nodeBaru dan Prev alamat salah satu elemen list
+       F.S. menempatkan elemen (node) sesudah elemen node Prev */
+    if (Prev != Nil) {
+        nodeBaru->next = Prev->next;
+        Prev->next = nodeBaru;
+    } else {
+        cout << "Node sebelumnya tidak valid!" << endl;
+    }
+}
+
+void insertLast(linkedList &List, address nodeBaru) {
+    /* I.S. sembarang, nodeBaru sudah dialokasikan
+       F.S. menempatkan elemen nodeBaru pada akhir list */
+    if (isEmpty(List)) {
+        List.first = nodeBaru;
+    } else {
+        address nodeBantu = List.first;
+        while (nodeBantu->next != Nil) {
+            nodeBantu = nodeBantu->next;
+        }
+        nodeBantu->next = nodeBaru;
+    }
+}
+
+// Prosedur-prosedur untuk delete / menghapus node
+void delFirst(linkedList &List) {
+    /* I.S. list tidak kosong
+       F.S. node pertama di list terhapus */
+    address nodeHapus;
+    if (isEmpty(List) == false) {
+        nodeHapus = List.first;
+        List.first = List.first->next;
+        nodeHapus->next = Nil;
+        dealokasi(nodeHapus);
+    } else {
+        cout << "List kosong!" << endl;
+    }
+}
+
+void delLast(linkedList &List) {
+    /* I.S. list tidak kosong
+       F.S. node terakhir di list terhapus */
+    address nodeHapus, nodePrev;
+    if (isEmpty(List) == false) {
+        nodeHapus = List.first;
+        if (nodeHapus->next == Nil) {
+            List.first = Nil;
+            dealokasi(nodeHapus);
+        } else {
+            while (nodeHapus->next != Nil) {
+                nodePrev = nodeHapus;
+                nodeHapus = nodeHapus->next;
+            }
+            nodePrev->next = Nil;
+            dealokasi(nodeHapus);
+        }
+    } else {
+        cout << "List kosong" << endl;
+    }
+}
+
+void delAfter(linkedList &List, address nodeHapus, address nodePrev) {
+    /* I.S. list tidak kosong, alamat salah satu elemen list
+       F.S. nodeBantu adalah alamat dari Prev->next,
+       menghapus Prev->next dari list */
+    if (isEmpty(List) == true) {
+        cout << "List kosong!" << endl;
+    } else {
+        if (nodePrev != Nil && nodePrev->next != Nil) {
+            nodeHapus = nodePrev->next;
+            nodePrev->next = nodeHapus->next;
+            nodeHapus->next = Nil;
+            dealokasi(nodeHapus);
+        } else {
+            cout << "Node sebelumnya (prev) tidak valid!" << endl;
         }
     }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
+}
 
-    return 0;
+// Prosedur untuk menampilkan isi list
+void printList(linkedList List) {
+    /* I.S. list mungkin kosong
+       F.S. jika list tidak kosong menampilkan semua info yang ada pada list */
+    if (isEmpty(List)) {
+        cout << "List kosong." << endl;
+    } else {
+        address nodeBantu = List.first;
+        while (nodeBantu != Nil) {
+            cout << "Nama : " << nodeBantu->isidata.nama
+                << ", NIM : " << nodeBantu->isidata.nim
+                << ", Usia : " << nodeBantu->isidata.umur
+                << endl;
+            nodeBantu = nodeBantu->next;
+        }
+    }
+}
+
+// Function untuk menampilkan jumlah node di dalam list
+int nbList(linkedList List) {
+    /* I.S. list sudah ada
+       F.S. menampilkan jumlah node di dalam list */
+    int count = 0;
+    address nodeBantu = List.first;
+    while (nodeBantu != Nil) {
+        count++;
+        nodeBantu = nodeBantu->next;
+    }
+    return count;
+}
+
+// Prosedur untuk menghapus list (menghapus semua node di dalam list)
+void deleteList(linkedList &List) {
+    /* I.S. list sudah ada
+       F.S. menghapus semua node di dalam list */
+    address nodeBantu, nodeHapus;
+    nodeBantu = List.first;
+    while (nodeBantu != Nil) {
+        nodeHapus = nodeBantu;
+        nodeBantu = nodeBantu->next;
+        dealokasi(nodeHapus);
+    }
+    List.first = Nil;
+    cout << "List sudah terhapus!" << endl;
 }
 ```
 guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
 
-### 3. soal3
+### 3. main.cpp
 
 ```C++
+
+#include "list.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n;
+    linkedList List;
+    address nodeA, nodeB, nodeC, nodeD, nodeE = Nil;
 
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
+    createList(List);
 
-    for (int i = n; i >= 1; i--) {
+    dataMahasiswa mhs;
 
-        for (int j = n; j > i; j--) {
-            cout << "  ";
-        }
+    nodeA = alokasi("Dhimas", "2311102151", 20);
+    nodeB = alokasi("Arvin", "2211110014", 21);
+    nodeC = alokasi("Rizal", "2311110029", 20);
+    nodeD = alokasi("Satrio", "2211102173", 21);
+    nodeE = alokasi("Joshua", "2311102133", 21);
 
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
+    insertFirst(List, nodeA);
+    insertLast(List, nodeB);
+    insertAfter(List, nodeC, nodeA);
+    insertAfter(List, nodeD, nodeC);
+    insertLast(List, nodeE);
 
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
+    cout << "--- ISI LIST SETELAH DILAKUKAN INSERT ---" << endl;
+    printList(List);
+    cout << "jumlah node : " << nbList(List) << endl;
+    cout << endl;
+
+    delFirst(List);
+    delLast(List);
+    delAfter(List, nodeD, nodeC);
+
+    cout << "--- ISI LIST SETELAH DILAKUKAN DELETE ---" << endl;
+    printList(List);
+    cout << "jumlah node : " << nbList(List) << endl;
+    cout << endl;
+
+    deleteList(List);
+
+    cout << "--- ISI LIST SETELAH DILAKUKAN HAPUS LIST ---" << endl;
+    printList(List);
+    cout << "jumlah node : " << nbList(List) << endl;
+    cout << endl;
 
     return 0;
 }
