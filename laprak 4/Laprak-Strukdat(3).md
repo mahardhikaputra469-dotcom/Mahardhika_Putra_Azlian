@@ -57,7 +57,7 @@ void deleteList(linkedList &list);
 
 #endif
 ```
-Guided 1 Menjelaskan program menerima dua bilangan float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari kedua bilangan tersebut.
+
 
 ### 2. list.cpp
 
@@ -240,7 +240,7 @@ void deleteList(linkedList &List) {
     cout << "List sudah terhapus!" << endl;
 }
 ```
-guided 2 Menjelaskan program menerima angka 0–100, kemudian mengubah angka tersebut menjadi bentuk tulisan, misalnya 79 menjadi “tujuh puluh sembilan”.
+
 
 ### 3. main.cpp
 
@@ -294,8 +294,7 @@ int main() {
     return 0;
 }
 ```
-guided 3 menjelaskan Program menerima sebuah angka, kemudian menggunakan perulangan untuk membuat pola angka yang berbentuk mirror, dengan tanda * sebagai bagian tengahnya.
-
+guided Program ini menggunakan struktur data Singly Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, dan umur. Program memiliki fungsi untuk membuat list, menambahkan node di awal, tengah, dan akhir, menghapus node, menampilkan data, menghitung jumlah node, serta menghapus seluruh list. Dengan adanya pointer dan manajemen memori dinamis, data mahasiswa dapat dikelola secara fleksibel sesuai kebutuhan.
 ## Unguided 
 
 ### 1. membuat program yang menerima input dua buah bilangan bertipe float.
