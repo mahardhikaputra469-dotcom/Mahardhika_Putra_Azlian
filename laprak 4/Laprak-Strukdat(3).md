@@ -297,140 +297,343 @@ int main() {
 guided Program ini menggunakan struktur data Singly Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, dan umur. Program memiliki fungsi untuk membuat list, menambahkan node di awal, tengah, dan akhir, menghapus node, menampilkan data, menghitung jumlah node, serta menghapus seluruh list. Dengan adanya pointer dan manajemen memori dinamis, data mahasiswa dapat dikelola secara fleksibel sesuai kebutuhan.
 ## Unguided 
 
-### 1. membuat program yang menerima input dua buah bilangan bertipe float.
+### 1.1 Singlylist.h
 
 ```C++
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+typedef int infotype;
+typedef struct elmList *address;
+
+struct elmList{
+    infotype info;
+    address next;
+};
+
+struct List{
+    address first;
+};
+
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+void deleteFirst(List &L);
+void deleteLast(List &L);
+void deleteAfter(List &L, address prev);
+int nbList(List L);
+void deleteList(List &L);
+
+#endif
+```
+
+### 1.2 Singlylist.cpp
+```C++
+#include "Singlylist.h"
 #include <iostream>
 using namespace std;
 
+void createList(List &L) {
+    L.first = nullptr;
+}
+
+address alokasi(infotype x) {
+    address P = new elmList;
+    P->info = x;
+    P->next = nullptr;
+    return P;
+}
+
+void dealokasi(address &P) {
+    if (P != nullptr) {
+        delete P;
+        P = nullptr;
+    }
+}
+
+void printInfo(List L) {
+    address P = L.first;
+
+    while (P != nullptr) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    L.first = P;
+}
+
+void deleteFirst(List &L) {
+    if (L.first != nullptr) {
+        address P = L.first;
+        L.first = P->next;
+        dealokasi(P);
+    }
+}
+
+void deleteLast(List &L) {
+    if (L.first == nullptr) {
+        return;
+    }
+
+    if (L.first->next == nullptr) {
+        dealokasi(L.first);
+        return;
+    }
+
+    address P = L.first;
+
+    while (P->next->next != nullptr) {
+        P = P->next;
+    }
+
+    address H = P->next;
+    P->next = nullptr;
+    dealokasi(H);
+}
+
+void deleteAfter(List &L, address prev) {
+    if (prev != nullptr && prev->next != nullptr) {
+        address P = prev->next;
+        prev->next = P->next;
+        dealokasi(P);
+    }
+}
+
+int nbList(List L) {
+    int jumlah = 0;
+    address P = L.first;
+
+    while (P != nullptr) {
+        jumlah++;
+        P = P->next;
+    }
+
+    return jumlah;
+}
+
+void deleteList(List &L) {
+    while (L.first != nullptr) {
+        deleteFirst(L);
+    }
+
+    cout << "- List Berhasil Terhapus -" << endl;
+}
+```
+
+### 1.3 main.cpp
+```C++
+
+#include "Singlylist.h"
+
 int main() {
-    float a, b;
+    List L;
+    address P1, P2, P3, P4, P5;
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
+    createList(L);
 
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
+    P1 = alokasi(2);
+    insertFirst(L, P1);
 
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    printInfo(L);
 
     return 0;
 }
+
 ```
+
 ### Output Unguided 1 :
 
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal1.png)
 
-##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
 penjelasan unguided 1 
 
-### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
+### 2.1 Singlylist.h
 
 ```C++
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+typedef int infotype;
+typedef struct elmList *address;
+
+struct elmList{
+    infotype info;
+    address next;
+};
+
+struct List{
+    address first;
+};
+
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+void deleteFirst(List &L);
+void deleteLast(List &L);
+void deleteAfter(List &L, address prev);
+int nbList(List L);
+void deleteList(List &L);
+
+#endif
+```
+
+### 2.2 Singlylist.cpp
+```C++
+#include "Singlylist.h"
+#include <iostream>
+using namespace std;
+
+void createList(List &L) {
+    L.first = nullptr;
+}
+
+address alokasi(infotype x) {
+    address P = new elmList;
+    P->info = x;
+    P->next = nullptr;
+    return P;
+}
+
+void dealokasi(address &P) {
+    if (P != nullptr) {
+        delete P;
+        P = nullptr;
+    }
+}
+
+void printInfo(List L) {
+    address P = L.first;
+
+    while (P != nullptr) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    L.first = P;
+}
+
+void deleteFirst(List &L) {
+    if (L.first != nullptr) {
+        address P = L.first;
+        L.first = P->next;
+        dealokasi(P);
+    }
+}
+
+void deleteLast(List &L) {
+    if (L.first == nullptr) {
+        return;
+    }
+
+    if (L.first->next == nullptr) {
+        dealokasi(L.first);
+        return;
+    }
+
+    address P = L.first;
+
+    while (P->next->next != nullptr) {
+        P = P->next;
+    }
+
+    address H = P->next;
+    P->next = nullptr;
+    dealokasi(H);
+}
+
+void deleteAfter(List &L, address prev) {
+    if (prev != nullptr && prev->next != nullptr) {
+        address P = prev->next;
+        prev->next = P->next;
+        dealokasi(P);
+    }
+}
+
+int nbList(List L) {
+    int jumlah = 0;
+    address P = L.first;
+
+    while (P != nullptr) {
+        jumlah++;
+        P = P->next;
+    }
+
+    return jumlah;
+}
+
+void deleteList(List &L) {
+    while (L.first != nullptr) {
+        deleteFirst(L);
+    }
+
+    cout << "- List Berhasil Terhapus -" << endl;
+}
+```
+
+### 2.3 main.cpp
+```C++
+#include "Singlylist.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+    List L;
+    createList(L);
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+    insertFirst(L, alokasi(2));
+    insertFirst(L, alokasi(0));
+    insertFirst(L, alokasi(8));
+    insertFirst(L, alokasi(12));
+    insertFirst(L, alokasi(9));
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
+    deleteFirst(L);
+    deleteLast(L);
+    deleteAfter(L, L.first);
 
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
+    printInfo(L);
+    cout << "Jumlah node : " << nbList(L) << endl;
+
+    deleteList(L);
+    cout << "Jumlah node : " << nbList(L) << endl;
 
     return 0;
 }
 ```
+
 ### Output Unguided 2 :
 
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
 
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
 penjelasan unguided 2
 
-### 3. meminta kita membuat program yang menerima input berupa sebuah angka, kemudian menghasilkan pola output berbentuk mirror.
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
-
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << "  ";
-        }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
-
-    return 0;
-}
-```
-### Output Unguided 3 :
-
-##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
-
-##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 3
 
 ## Kesimpulan
 Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
