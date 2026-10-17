@@ -636,9 +636,9 @@ penjelasan unguided 2
 
 
 ## Kesimpulan
-Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
+Berdasarkan praktikum Struktur Data, Singly Linked List merupakan struktur data yang terdiri dari node yang saling terhubung menggunakan pointer. Pada program ini, Linked List digunakan untuk menyimpan data berupa bilangan integer dengan fungsi CreateList(), alokasi(), dealokasi(), insertFirst(), dan printInfo(). Melalui praktikum ini, dapat dipahami cara membuat list kosong, mengalokasikan memori untuk node baru, menambahkan node di awal list, serta menampilkan data sesuai urutan yang terbentuk. Dengan demikian, praktikum ini membantu memahami konsep dasar Singly Linked List dan penerapannya dalam bahasa C++.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] Morin, P. (2013). Open Data Structures: An Introduction. Athabasca University Press. Bab 3: Linked Lists. 
+<br>[2] Harvard University. (2026). CS 61: C++ Notes — Patterns. Harvard Computer Science.
+<br>[3] Vijayalakshmi Pai, G. A. (2023). Linked Lists. Dalam A Textbook of Data Structures and Algorithms 1. Wiley. https://doi.org/10.1002/9781394192076.ch6<br>
