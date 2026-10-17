@@ -295,6 +295,7 @@ int main() {
 }
 ```
 guided Program ini menggunakan struktur data Singly Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, dan umur. Program memiliki fungsi untuk membuat list, menambahkan node di awal, tengah, dan akhir, menghapus node, menampilkan data, menghitung jumlah node, serta menghapus seluruh list. Dengan adanya pointer dan manajemen memori dinamis, data mahasiswa dapat dikelola secara fleksibel sesuai kebutuhan.
+
 ## Unguided 
 
 ### 1.1 Singlylist.h
@@ -465,7 +466,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%204/soal%201/p1.png)
 
-penjelasan unguided 1 
+penjelasan unguided 1 Linked List adalah struktur data yang terdiri dari node-node yang saling terhubung menggunakan pointer. Setiap node menyimpan data dan alamat node berikutnya. Penambahan dan penghapusan node dilakukan dengan mengatur pointer.
 
 ### 2.1 Singlylist.h
 
@@ -632,7 +633,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%204/soal%202/p2.png)
 
-penjelasan unguided 2
+penjelasan unguided 2 Linked List dalam C++ menggunakan pointer untuk menghubungkan node. Operasi dasarnya meliputi penambahan node, penghapusan node, dan penelusuran data dari node pertama hingga node terakhir.
 
 
 ## Kesimpulan
