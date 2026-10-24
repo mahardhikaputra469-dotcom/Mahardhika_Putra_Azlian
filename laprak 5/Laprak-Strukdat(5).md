@@ -431,33 +431,148 @@ guided Program ini menggunakan struktur data Singly Linked List dalam bahasa C++
 
 ## Unguided 
 
-### 1. membuat program yang menerima input dua buah bilangan bertipe float.
+### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
 
+```
+Type infotype : int
+Type address  : pointer to ElmList
+Type ElmList <
+    info : infotype
+    next : address
+>
+Type List : < First : address >
+procedure CreateList( input/output L : List )
+function alokasi( x : infotype ) → address
+procedure dealokasi(input/output P : address )
+procedure printInfo( input L : List )
+procedure insertFirst(input/output L : List, input P :address)
+```
+### Singlylist.h
 ```C++
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
 #include <iostream>
 using namespace std;
 
+#define Nil NULL
+
+typedef int infotype;
+typedef struct ElmList *address;
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+address findElm(List L, infotype x);
+int totalInfo(List L);
+
+#endif
+```
+
+### Singlylist.cpp
+```C++
+
+#include "Singlylist.h"
+
+void createList(List &L) {
+    L.First = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    if (P != Nil) {
+        delete P;
+        P = Nil;
+    }
+}
+
+void printInfo(List L) {
+    address P = L.First;
+
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.First;
+
+    while (P != Nil) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+
+    return Nil;
+}
+
+int totalInfo(List L) {
+    address P = L.First;
+    int total = 0;
+
+    while (P != Nil) {
+        total += P->info;
+        P = P->next;
+    }
+
+    return total;
+}
+```
+
+### main.cpp
+```C++
+#include "Singlylist.h"
+
 int main() {
-    float a, b;
+    List L;
+    address P1, P2, P3, P4, P5;
+    createList(L);
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+    P5 = alokasi(9);
+    insertFirst(L, P5);
 
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
-
-    cout << "Penjumlahan = " << a + b << endl;
-    cout << "Pengurangan = " << a - b << endl;
-    cout << "Perkalian   = " << a * b << endl;
-    cout << "Pembagian   = " << a / b << endl;
-
+    printInfo(L);
     return 0;
 }
 ```
+
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal1.png)
+![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%205/soal%20modul%205/output%201.png)
 
 penjelasan unguided 1 
 
