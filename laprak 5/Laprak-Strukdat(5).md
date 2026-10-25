@@ -677,12 +677,40 @@ int totalInfo(List L) {
 
 ### main.cpp
 ```C++
+#include "Singlylist.h"
 
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5;
+    address hasil;
+    createList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    hasil = findElm(L, 8);
+
+    if (hasil != Nil) {
+        cout << "8 ditemukan dalam list." << endl;
+    }else {
+        cout << "8 tidak ditemukan dalam list." << endl;
+    }
+
+    return 0;
+}
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
+![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%205/soal%202%20modul%205/output%202.png)
 
 penjelasan unguided 2
 
@@ -787,7 +815,27 @@ int totalInfo(List L) {
 
 ### main.cpp
 ```C++
+#include "Singlylist.h"
 
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5;
+    createList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    cout << "Total info dari kelima elemen adalah " << totalInfo(L) << endl;
+    return 0;
+}
 ```
 
 ### Output Unguided 3 :
