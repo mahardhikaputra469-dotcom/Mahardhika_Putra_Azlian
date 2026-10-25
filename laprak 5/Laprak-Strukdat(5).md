@@ -2,9 +2,7 @@
 <p align="center">Mahardhika Putra Azlian - 109082500025</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
+Singly Linked List merupakan struktur data linear yang terdiri dari beberapa node yang saling terhubung menggunakan pointer. Setiap node memiliki dua bagian, yaitu info untuk menyimpan data dan next untuk menunjuk ke node berikutnya. Pointer First digunakan untuk menunjukkan node pertama, sedangkan Nil menandakan bahwa tidak ada node berikutnya atau list masih kosong. Operasi dasar Singly Linked List meliputi pembuatan list menggunakan createList(), pembuatan node melalui alokasi(), penghapusan node menggunakan dealokasi(), serta penambahan elemen di awal list dengan insertFirst(). Fungsi printInfo() digunakan untuk menampilkan seluruh data, sedangkan findElm() digunakan untuk mencari elemen berdasarkan nilai tertentu. Selain itu, fungsi totalInfo() digunakan untuk menjumlahkan seluruh nilai yang tersimpan dalam list. Dengan memahami operasi tersebut, Singly Linked List dapat digunakan untuk menyimpan, menampilkan, mencari, dan mengolah data secara dinamis menggunakan bahasa pemrograman C++.
 
 
 ## Guided 
@@ -574,7 +572,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%205/soal%20modul%205/output%201.png)
 
-penjelasan unguided 1 
+penjelasan unguided 1 Program berhasil membuat Singly Linked List, memasukkan lima bilangan bulat, dan menampilkan seluruh data secara mendatar. Hasil output menunjukkan bahwa urutan data dimulai dari 9 hingga 2 karena fungsi insertFirst() selalu menambahkan elemen baru di bagian awal linked list.
 
 ### 2. Carilah elemen dengan info 8 dengan membuat fungsi baru. fungsi findElm( L : List, x : infotype ) : address 
 
@@ -712,7 +710,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%205/soal%202%20modul%205/output%202.png)
 
-penjelasan unguided 2
+penjelasan unguided 2 Fungsi findElm() berhasil melakukan pencarian data pada Singly Linked List dengan memeriksa nilai setiap elemen secara berurutan. Ketika nilai 8 ditemukan, fungsi mengembalikan alamat elemen tersebut sehingga program dapat mengetahui bahwa data yang dicari tersedia di dalam list.
 
 ### 3. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31). 
 
@@ -841,14 +839,14 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
+![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%205/soal%203%20modul%205/output%203.png)
 
-penjelasan unguided 3
+penjelasan unguided 3 Fungsi totalInfo() berhasil menjumlahkan seluruh nilai yang terdapat dalam Singly Linked List dengan menelusuri setiap elemen menggunakan pointer. Hasil penjumlahan dari nilai 9, 12, 8, 0, dan 2 adalah 31, sehingga program dapat menampilkan jumlah seluruh elemen dengan benar.
 
 ## Kesimpulan
-Dari ketiga soal tersebut, dapat disimpulkan bahwa latihan ini mengajarkan dasar-dasar pemrograman C++. Soal pertama melatih penggunaan input, output, dan operasi aritmatika. Soal kedua melatih penggunaan percabangan untuk mengubah angka 0–100 menjadi bentuk tulisan. Soal ketiga melatih penggunaan perulangan untuk membuat pola angka berbentuk mirror. Dengan mengerjakan ketiga soal ini, kita dapat memahami cara menggunakan beberapa konsep dasar C++ untuk menyelesaikan permasalahan sederhana.
+Berdasarkan ketiga soal yang telah dikerjakan, dapat dipahami bahwa Singly Linked List merupakan struktur data yang memungkinkan penyimpanan beberapa elemen secara berurutan melalui hubungan pointer. Setiap elemen menyimpan nilai data dan alamat elemen berikutnya, sehingga program dapat menelusuri seluruh data mulai dari elemen pertama hingga elemen terakhir. Pada soal nomor 2, program menerapkan fungsi createList(), alokasi(), insertFirst(), dan printInfo() untuk membuat list, menambahkan elemen, serta menampilkan data. Hasilnya adalah 9 12 8 0 2, karena setiap elemen baru dimasukkan pada bagian awal list. Pada soal nomor 3, fungsi findElm() digunakan untuk mencari nilai tertentu dengan memeriksa setiap elemen secara berurutan. Fungsi ini mengembalikan alamat elemen apabila data ditemukan atau Nil apabila data tidak ditemukan. Dalam kasus ini, nilai 8 berhasil ditemukan pada elemen ketiga. Sementara itu, pada soal nomor 4, fungsi totalInfo() digunakan untuk menjumlahkan seluruh nilai elemen yang ada di dalam list. Proses dilakukan dengan menambahkan nilai setiap node ke variabel total sampai seluruh elemen selesai diperiksa. Hasil akhirnya adalah 31. Dengan demikian, ketiga soal ini memberikan pemahaman mengenai cara membuat dan mengelola Singly Linked List, melakukan pencarian elemen, serta melakukan perhitungan terhadap data yang tersimpan. Penggunaan fungsi-fungsi tersebut membuat program lebih terstruktur dan memudahkan pengolahan data dalam sebuah linked list.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] 1. OpenDSA. (n.d.). Linked Lists. OpenDSA Data Structures and Algorithms. https://opendsa.org/OpenDSA/Books/Catalog/html/ListLinked.html. <br>
+[2] GeeksforGeeks. (2026). Singly Linked List Tutorial. https://www.geeksforgeeks.org/dsa/singly-linked-list-tutorial/. <br>
+[3] Pat Morin. (2013). Open Data Structures: Linked Lists. https://www.opendatastructures.org/ods-cpp.pdf<br>
