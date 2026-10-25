@@ -576,51 +576,108 @@ int main() {
 
 penjelasan unguided 1 
 
-### 2. sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan.
+### 2. Carilah elemen dengan info 8 dengan membuat fungsi baru. fungsi findElm( L : List, x : infotype ) : address 
 
+### Singlylist.h
 ```C++
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
 #include <iostream>
 using namespace std;
 
-int main() {
-    int angka;
-    cout << "Masukan Angka (0-100): ";
-    cin >> angka;
+#define Nil NULL
 
-    string satuan[] {
-        "nol", "satu", "dua", "tiga", "empat", "lima",
-        "enam", "tujuh", "delapan", "sembilan"
-    };
+typedef int infotype;
+typedef struct ElmList *address;
 
-    if (angka < 0 || angka > 100){
-        cout << "angka harus 0-100";
-    }
-    else if (angka < 10){
-        cout << satuan[angka];
-    }
-    else if (angka == 10){
-        cout << "sepuluh";
-    }
-    else if (angka == 11){
-        cout << "sebelas";
-    }
-    else if (angka < 20){
-        cout << satuan[angka - 10] <<"belas";
-    }
-    else if (angka < 100){
-        cout << satuan[angka / 10] << "puluh";
+struct ElmList {
+    infotype info;
+    address next;
+};
 
-        if (angka % 10 != 0){
-            cout << " " << satuan[angka % 10];
-        }
-    }
-    else {
-        cout << "seratus";
-    }
-    cout << endl;
+struct List {
+    address First;
+};
 
-    return 0;
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+address findElm(List L, infotype x);
+int totalInfo(List L);
+
+#endif
+```
+
+### Singlylist.cpp
+```C++
+
+#include "Singlylist.h"
+
+void createList(List &L) {
+    L.First = Nil;
 }
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    if (P != Nil) {
+        delete P;
+        P = Nil;
+    }
+}
+
+void printInfo(List L) {
+    address P = L.First;
+
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.First;
+
+    while (P != Nil) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+
+    return Nil;
+}
+
+int totalInfo(List L) {
+    address P = L.First;
+    int total = 0;
+
+    while (P != Nil) {
+        total += P->info;
+        P = P->next;
+    }
+
+    return total;
+}
+```
+
+### main.cpp
+```C++
+
 ```
 ### Output Unguided 2 :
 
@@ -629,42 +686,110 @@ int main() {
 
 penjelasan unguided 2
 
-### 3. meminta kita membuat program yang menerima input berupa sebuah angka, kemudian menghasilkan pola output berbentuk mirror.
+### 3. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31). 
 
+### Singlylist.h
 ```C++
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n;
+#define Nil NULL
 
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:" << endl;
+typedef int infotype;
+typedef struct ElmList *address;
 
-    for (int i = n; i >= 1; i--) {
+struct ElmList {
+    infotype info;
+    address next;
+};
 
-        for (int j = n; j > i; j--) {
-            cout << "  ";
+struct List {
+    address First;
+};
+
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+address findElm(List L, infotype x);
+int totalInfo(List L);
+
+#endif
+```
+
+### Singlylist.cpp
+```C++
+
+#include "Singlylist.h"
+
+void createList(List &L) {
+    L.First = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    if (P != Nil) {
+        delete P;
+        P = Nil;
+    }
+}
+
+void printInfo(List L) {
+    address P = L.First;
+
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.First;
+
+    while (P != Nil) {
+        if (P->info == x) {
+            return P;
         }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-            if (j < i) {
-                cout << " ";
-            }
-        }
-        cout << endl;
+        P = P->next;
     }
 
-    return 0;
+    return Nil;
+}
+
+int totalInfo(List L) {
+    address P = L.First;
+    int total = 0;
+
+    while (P != Nil) {
+        total += P->info;
+        P = P->next;
+    }
+
+    return total;
 }
 ```
+
+### main.cpp
+```C++
+
+```
+
 ### Output Unguided 3 :
 
 ##### Output 1
