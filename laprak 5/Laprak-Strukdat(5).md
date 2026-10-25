@@ -7,7 +7,7 @@ Singly Linked List merupakan struktur data linear yang terdiri dari beberapa nod
 
 ## Guided 
 
-### 1. listBuah..h
+### 1. listBuah.h
 
 ```C++
 #ifndef LISTBUAH_H
