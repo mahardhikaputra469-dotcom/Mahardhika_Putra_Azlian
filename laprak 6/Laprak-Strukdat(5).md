@@ -389,7 +389,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%206/soal%20modul%205/output%201.png)
+![Screenshot Output Unguided 1_1]https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%206/Soal%201/Output%20Soal%201.png)
 
 
 penjelasan unguided 1 ini, cara membuat dan menggunakan ADT Doubly Linked List dengan bahasa C++. Program ini dapat digunakan untuk memasukkan data buku, mengecek apakah ada kode buku yang sama, dan menampilkan seluruh data yang sudah dimasukkan. Melalui praktikum ini, saya jadi lebih memahami bagaimana data saling terhubung menggunakan next dan prev, serta bagaimana cara mengelola data dalam Doubly Linked List.
@@ -559,7 +559,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
+![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%206/Soal%201/Output%20Soal%202.png)
 
 
 penjelasan unguided 2 ini membuat fungsi findElm() untuk mencari data buku berdasarkan kode buku yang dimasukkan. Program akan memeriksa setiap elemen dalam Doubly Linked List sampai menemukan kode yang sesuai. Jika ditemukan, informasi buku seperti kode, judul, dan tahun terbit akan ditampilkan. Dari soal ini, saya jadi lebih memahami cara melakukan pencarian data menggunakan Doubly Linked List.
@@ -790,7 +790,7 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
+![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%206/Soal%201/Output%20Soal%203.png)
 
 penjelasan unguided 3 ini cara menghapus data buku dari Doubly Linked List berdasarkan kode buku yang dipilih. Program menggunakan fungsi deleteFirst(), deleteLast(), dan deleteAfter() sesuai dengan posisi data yang akan dihapus. Setelah data berhasil dihapus, program menampilkan kembali daftar buku yang masih tersimpan. Dari soal ini, saya jadi lebih memahami cara mengelola dan menghapus elemen dalam Doubly Linked List.
 
