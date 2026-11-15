@@ -269,7 +269,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%207/soal%20modul%206/output%201.png)
+![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%207/Soal%201/Output%20Soal%201.png)
 
 
 penjelasan unguided 1 ini, Menggunakan konsep LIFO (Last In First Out), yaitu data yang terakhir dimasukkan akan menjadi data pertama yang dikeluarkan. Fungsi balikStack() digunakan untuk membalik urutan elemen Stack sehingga menghasilkan output sesuai gambar soal.
@@ -417,7 +417,7 @@ int main()
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
+![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%207/Soal%202/Output%20Soal%202.png)
 
 
 penjelasan unguided 2 menggunakan Array dapat digunakan untuk menyimpan dan mengelola data dengan konsep LIFO (Last In First Out). Pada praktikum ini, fungsi Push() digunakan untuk memasukkan data, pop() untuk mengeluarkan data, dan printInfo() untuk menampilkan isi Stack. Selain itu, prosedur pushAscending() digunakan untuk memasukkan data secara terurut berdasarkan nilai terkecil hingga terbesar, sedangkan balikStack() berfungsi membalik urutan elemen Stack. Dengan praktikum ini, dapat dipahami cara kerja Stack serta penerapan pengurutan data menggunakan Array dalam bahasa C++.
@@ -562,7 +562,7 @@ int main()
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
+![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%207/Soal%203/Output%20Soal%203.png)
 
 penjelasan unguided 3 Dari praktikum ini, menggunakan Array, terutama dalam menerima dan menyimpan data yang dimasukkan oleh pengguna. Pada percobaan ini, fungsi getInputStream() digunakan untuk membaca angka yang dimasukkan sampai tombol Enter ditekan. Setelah itu, data ditampilkan menggunakan printInfo() dan urutannya dibalik dengan balikStack(). Melalui praktikum ini, saya bisa memahami bagaimana konsep LIFO (Last In First Out) diterapkan dalam pengelolaan data menggunakan bahasa C++.
 
