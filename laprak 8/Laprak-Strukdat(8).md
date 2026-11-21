@@ -559,7 +559,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%207/soal%20modul%206/output%201.png)
+![Screenshot Output Unguided 1_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra_Azlian/blob/main/laprak%208/Soal%201/Output%20soal%201.png)
 
 
 penjelasan unguided 1 Pada alternatif ini, posisi head tetap berada di indeks 0 selama Queue tidak kosong, sedangkan tail bergerak mengikuti jumlah elemen. Ketika dilakukan operasi dequeue, elemen yang tersisa akan digeser ke depan agar posisi head tetap berada di indeks 0.
@@ -707,7 +707,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal2.png)
+![Screenshot Output Unguided 2_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%208/Soal%202/Output%20soal%202.png)
 
 
 penjelasan unguided 2 Pada alternatif ini, posisi head dan tail sama-sama bergerak sesuai operasi yang dilakukan. Ketika dequeue, posisi head bertambah satu tanpa menggeser elemen. Namun, ruang kosong di bagian depan array tidak dapat digunakan kembali sebelum Queue menjadi kosong.
@@ -859,7 +859,7 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%201/soal3.png)
+![Screenshot Output Unguided 3_1](https://github.com/mahardhikaputra469-dotcom/Mahardhika_Putra-Azlian/blob/main/laprak%208/Soal%203/Output%20soal%203.png)
 
 penjelasan unguided 3 Pada alternatif ini, posisi head dan tail bergerak secara melingkar (Circular Queue). Ketika mencapai indeks terakhir array, posisi berikutnya akan kembali ke indeks 0. Dengan mekanisme ini, ruang kosong pada array dapat digunakan kembali sehingga penggunaan kapasitas array menjadi lebih efisien.
 
